@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+	<title>MTS SkyTrack</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">
+			<img src="logo.png" style="width: 15ex;">
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#" id="navMap">Карта</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" id="navDrons">Мои дроны</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- nav content -->
+	<div id="navPanel">
+
+		<div class="container" id="navMapPanel">
+			<div id="map" style="width: 100%; height: 85ex; margin-top: 3ex;"></div>
+		</div>
+
+		<div class="container" id="navDronsPanel" hidden="hidden">
+			<div id="accordion" style="margin-top: 3ex;">
+				<div class="card">
+					<div class="card-header">
+						<a class="card-link" data-toggle="collapse" href="#collapseOne">
+							Фармадрон
+							<span class="badge badge-success float-right">В полете</span>
+						</a>
+					</div>
+					<div id="collapseOne" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+							<h3>Детский санаторий - Введенская Слобода - Петропавловская Слобода</h3>
+							<br>
+							<table class="table table-hover">
+								<tbody>
+									<tr>
+										<td>55.776799</td>
+										<td>48.704860</td>
+									</tr>
+									<tr>
+										<td>55.778607</td>
+										<td>48.709468</td>
+									</tr>
+									<tr>
+										<td>55.779285</td>
+										<td>48.712901</td>
+									</tr>
+									<tr>
+										<td>55.775995</td>
+										<td>48.716850</td>
+									</tr>
+									<tr>
+										<td>55.768351</td>
+										<td>48.717536</td>
+									</tr>
+									<tr>
+										<td>55.762447</td>
+										<td>48.720626</td>
+									</tr>
+									<tr>
+										<td>55.757027</td>
+										<td>48.722858</td>
+									</tr>
+									<tr>
+										<td>55.755285</td>
+										<td>48.715476</td>
+									</tr>
+									<tr>
+										<td>55.755091</td>
+										<td>48.705348</td>
+									</tr>
+									<tr>
+										<td>55.755381</td>
+										<td>48.696250</td>
+									</tr>
+									<tr>
+										<td>55.760802</td>
+										<td>48.688697</td>
+									</tr>
+									<tr>
+										<td>55.765544</td>
+										<td>48.688182</td>
+									</tr>
+									<tr>
+										<td>55.767317</td>
+										<td>48.697822</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+							Алкодрон
+							<span class="badge badge-success float-right">В полете</span>
+						</a>
+					</div>
+					<div id="collapseTwo" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+							<h3>Медведково - Свияжские холмы</h3>
+							<br>
+							<table class="table table-hover">
+								<tbody>
+									<tr>
+										<td>55.740374</td>
+										<td>48.709811</td>
+									</tr>
+									<tr>
+										<td>55.744054</td>
+										<td>48.703460</td>
+									</tr>
+									<tr>
+										<td>55.745119</td>
+										<td>48.698482</td>
+									</tr>
+									<tr>
+										<td>55.741052</td>
+										<td>48.693332</td>
+									</tr>
+									<tr>
+										<td>55.735338</td>
+										<td>48.700542</td>
+									</tr>
+									<tr>
+										<td>55.729623</td>
+										<td>48.703460</td>
+									</tr>
+									<tr>
+										<td>55.725070</td>
+										<td>48.706722</td>
+									</tr>
+									<tr>
+										<td>55.723423</td>
+										<td>48.717365</td>
+									</tr>
+									<tr>
+										<td>55.725748</td>
+										<td>48.726634</td>
+									</tr>
+									<tr>
+										<td>55.728765</td>
+										<td>48.735189</td>
+									</tr>
+									<tr>
+										<td>55.732785</td>
+										<td>48.736390</td>
+									</tr>
+									<tr>
+										<td>55.736562</td>
+										<td>48.732099</td>
+									</tr>
+									<tr>
+										<td>55.736853</td>
+										<td>48.732099</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+							Пицца-дрон
+							<span class="badge badge-success float-right">В полете</span>
+						</a>
+					</div>
+					<div id="collapseThree" class="collapse" data-parent="#accordion">
+						<div class="card-body">
+							<h3>Елизаветино - Здоровье - Пустые Моркваши - Восточная Звезда</h3>
+							<br>
+							<table class="table table-hover">
+								<tbody>
+									<tr>
+										<td>55.765600</td>
+										<td>48.781811</td>
+									</tr>
+									<tr>
+										<td>55.771406</td>
+										<td>48.787475</td>
+									</tr>
+									<tr>
+										<td>55.776050</td>
+										<td>48.790565</td>
+									</tr>
+									<tr>
+										<td>55.778082</td>
+										<td>48.792110</td>
+									</tr>
+									<tr>
+										<td>55.780791</td>
+										<td>48.788162</td>
+									</tr>
+									<tr>
+										<td>55.778856</td>
+										<td>48.778206</td>
+									</tr>
+									<tr>
+										<td>55.777308</td>
+										<td>48.768593</td>
+									</tr>
+									<tr>
+										<td>55.771212</td>
+										<td>48.762241</td>
+									</tr>
+									<tr>
+										<td>55.765503</td>
+										<td>48.756576</td>
+									</tr>
+									<tr>
+										<td>55.760470</td>
+										<td>48.752628</td>
+									</tr>
+									<tr>
+										<td>55.757082</td>
+										<td>48.752285</td>
+									</tr>
+									<tr>
+										<td>55.755243</td>
+										<td>48.757778</td>
+									</tr>
+									<tr>
+										<td>55.755920</td>
+										<td>48.768593</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		$("#navMap").on("click", function (e) {
+			e.preventDefault();
+			var lis = $(this).parent().parent().children();
+			for (var i = 0; i < lis.length; i++) {
+				$(lis[i]).removeClass("active");
+			}
+			$(this).parent().addClass("active");
+
+			var divs = $("#navPanel").children();
+			for (var i = 0; i < divs.length; i++) {
+				$(divs[i]).attr("hidden", "hidden");
+			}
+			$("#navMapPanel").removeAttr("hidden");
+		});
+
+		$("#navDrons").on("click", function(e) {
+			e.preventDefault();
+			var lis = $(this).parent().parent().children();
+			for (var i = 0; i < lis.length; i++) {
+				$(lis[i]).removeClass("active");
+			}
+			$(this).parent().addClass("active");
+
+			var divs = $("#navPanel").children();
+			for (var i = 0; i < divs.length; i++) {
+				$(divs[i]).attr("hidden", "hidden");
+			}
+			$("#navDronsPanel").removeAttr("hidden");
+		});
+
+		ymaps.ready(init);
+		var myMap, alcoDron, farmaDron, pizzaDron;
+
+		function init(){     
+			myMap = new ymaps.Map("map", {
+				center: [55.753669, 48.743312],
+				zoom: 13
+			});
+
+			//дроны
+			alcoDron = new ymaps.Placemark([55.738653, 48.709645], {
+				hintContent: 'Алкодрон',
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'drone.png',
+				iconImageSize: [40, 40],
+				iconImageOffset: [-15, -15]});
+
+			farmaDron = new ymaps.Placemark([55.773383, 48.699168], {
+				hintContent: 'Фармадрон',
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'drone.png',
+				iconImageSize: [40, 40],
+				iconImageOffset: [-15, -15]});
+
+			pizzaDron = new ymaps.Placemark([55.759640, 48.7728118], {
+				hintContent: 'Пицца-дрон',
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'drone.png',
+				iconImageSize: [40, 40],
+				iconImageOffset: [-15, -15]});
+
+			myMap.geoObjects.add(alcoDron);
+			myMap.geoObjects.add(farmaDron);
+			myMap.geoObjects.add(pizzaDron);
+
+			//пути
+			var farmaRoute = new ymaps.GeoObject({
+				geometry: {
+					type: "LineString",
+					coordinates: [
+					[55.776799, 48.704860],
+					[55.778607, 48.709468],
+					[55.779285, 48.712901],
+					[55.775995, 48.716850],
+					[55.768351, 48.717536],
+					[55.762447, 48.720626],
+					[55.757027, 48.722858],
+					[55.755285, 48.715476],
+					[55.755091, 48.705348],
+					[55.755381, 48.696250],
+					[55.760802, 48.688697],
+					[55.765544, 48.688182],
+					[55.767317, 48.697822],
+					[55.776799, 48.704860]
+					]
+				}
+			}, {strokeColor: "#FF0000", strokeWidth: 1});
+
+			var alcoRoute = new ymaps.GeoObject({
+				geometry: {
+					type: "LineString",
+					coordinates: [
+					[55.740374, 48.709811],
+					[55.744054, 48.703460],
+					[55.745119, 48.698482],
+					[55.741052, 48.693332],
+					[55.735338, 48.700542],
+					[55.729623, 48.703460],
+					[55.725070, 48.706722],
+					[55.723423, 48.717365],
+					[55.725748, 48.726634],
+					[55.728765, 48.735189],
+					[55.732785, 48.736390],
+					[55.736562, 48.732099],
+					[55.736853, 48.722743],
+					[55.740374, 48.709811]
+					]
+				}
+			}, {strokeColor: "#FF0000", strokeWidth: 1});
+
+			var pizzaRoute = new ymaps.GeoObject({
+				geometry: {
+					type: "LineString",
+					coordinates: [
+					[55.765600, 48.781811],
+					[55.771406, 48.787475],
+					[55.776050, 48.790565],
+					[55.778082, 48.792110],
+					[55.780791, 48.788162],
+					[55.778856, 48.778206],
+					[55.777308, 48.768593],
+					[55.771212, 48.762241],
+					[55.765503, 48.756576],
+					[55.760470, 48.752628],
+					[55.757082, 48.752285],
+					[55.755243, 48.757778],
+					[55.755920, 48.768593],
+					[55.765600, 48.781811]
+					]
+				}
+			}, {strokeColor: "#FF0000", strokeWidth: 1});
+
+			myMap.geoObjects.add(alcoRoute);
+			myMap.geoObjects.add(farmaRoute);
+			myMap.geoObjects.add(pizzaRoute);
+
+			var route = [
+			[55.776799, 48.704860],
+			[55.778607, 48.709468],
+			[55.779285, 48.712901],
+			[55.775995, 48.716850],
+			[55.768351, 48.717536],
+			[55.762447, 48.720626],
+			[55.757027, 48.722858],
+			[55.755285, 48.715476],
+			[55.755091, 48.705348],
+			[55.755381, 48.696250],
+			[55.760802, 48.688697],
+			[55.765544, 48.688182],
+			[55.767317, 48.697822],
+
+			[55.740374, 48.709811],
+			[55.744054, 48.703460],
+			[55.745119, 48.698482],
+			[55.741052, 48.693332],
+			[55.735338, 48.700542],
+			[55.729623, 48.703460],
+			[55.725070, 48.706722],
+			[55.723423, 48.717365],
+			[55.725748, 48.726634],
+			[55.728765, 48.735189],
+			[55.732785, 48.736390],
+			[55.736562, 48.732099],
+			[55.736853, 48.722743],
+
+			[55.765600, 48.781811],
+			[55.771406, 48.787475],
+			[55.776050, 48.790565],
+			[55.778082, 48.792110],
+			[55.780791, 48.788162],
+			[55.778856, 48.778206],
+			[55.777308, 48.768593],
+			[55.771212, 48.762241],
+			[55.765503, 48.756576],
+			[55.760470, 48.752628],
+			[55.757082, 48.752285],
+			[55.755243, 48.757778],
+			[55.755920, 48.768593]
+			]
+
+			var i = 0;
+
+			function changePosition() {
+				if (i == 13) i = 0;
+				farmaDron.geometry.setCoordinates(route[i]);
+				alcoDron.geometry.setCoordinates(route[i + 13]);
+				pizzaDron.geometry.setCoordinates(route[i + 26]);
+				console.log(i);
+				i++;
+			}
+
+			setInterval(changePosition, 1500);
+		}
+
+	</script>
+</body>
+</html>
